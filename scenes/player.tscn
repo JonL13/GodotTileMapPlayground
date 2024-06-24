@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bseeyplfwtv3l"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_jb3nj"]
+[ext_resource type="Texture2D" uid="uid://db3qy88uhdub0" path="res://assets/0x72_DungeonTilesetII/0x72_DungeonTilesetII_v1.7.png" id="1_khomp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdd13"]
+atlas = ExtResource("1_khomp")
+region = Rect2(128, 69, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p3e3"]
+atlas = ExtResource("1_khomp")
+region = Rect2(144, 69, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe8bc"]
+atlas = ExtResource("1_khomp")
+region = Rect2(176, 69, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewkk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdd13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p3e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe8bc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Player" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_jb3nj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_ewkk4")
+autoplay = "default"
+frame_progress = 0.434346
